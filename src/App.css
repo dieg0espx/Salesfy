@@ -1,7 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800;900&display=swap');
 .App {
   text-align: center;
+  padding-top: 80px;
 }
-
+body {
+  background-color: hsl(0, 0%, 96%);
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -34,5 +38,341 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  /* border-bottom: 1px solid lightgray; */
+  display: grid;
+  grid-template-columns: auto 100px;
+  font-size: 35px;
+  line-height: 60px;
+  color: #69D780;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  background-color: white;
+  z-index: 999;
+}
+
+#headerLeft {
+  text-align: left;
+  margin-left: 10px;
+  font-weight: 900; 
+}
+
+.overlay {
+  position: fixed;
+  top: 60px; left: 0px;
+  width: 100%;
+  height: calc(100vh - 60px);
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.menu {
+  display: none;
+  position: fixed;
+  top:60px; left: 0px;
+  width: 250px;
+  height: calc(100vh - 60px);
+  background-color: white;
+  border-bottom: 1px solid lightgray;
+  animation: menu 0.4s;
+  z-index: 997;
+}
+
+
+@keyframes menu {
+  from {
+    left: -100vw;
+  } 
+  to {
+    left: 0;
+  }
+}
+
+.hideMenuIcon {
+  animation: rotate 0.8s;
+  margin-left: 20px;
+}
+@keyframes rotate {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+}
+
+
+.menu button {
+  display: block;
+  width: 100%;
+  height: 45px;
+  border-top: 1px solid lightgray;
+  background-color: transparent;
+  font-size: 18px;
+  color: gray;
+  text-align: left;
+  padding-left: 20px;
+}
+
+
+.customer {
+  display: grid;
+  grid-template-columns: 50px auto 30px;
+  width: 95%;
+  margin: 8px auto 8px auto;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+  border-radius: 8px;
+  padding: 8px;
+  text-align: left;
+  align-items: center;
+  background-color: white;
+}
+.customerIcon {
+  color: gray;
+  font-size: 30px;
+  margin-left: 5px;
+}
+.arrowIcon {
+  font-size: 30px;
+  color: gray;
+}
+.customer h2 {
+  font-size: 15px;
+}
+
+
+
+.userOverall {
+  width: 95%;
+  margin: auto;
+  background-image: url(./images/3-2.png);
+  background-position:bottom right;
+  border-radius: 10px;
+  text-align: left;
+  /* animation: bg 15s; */
+  animation-iteration-count: infinite;
+}
+@keyframes bg {
+  0% {
+    background-position: bottom right;
+  }
+  50%{
+    background-position: top right;
+  }
+  100% {
+    background-position: bottom right;
+  }
+}
+.userOverallContent{
+  backdrop-filter: blur(500px);
+  padding: 20px;
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: auto 100px;
+  align-items: center;
+}
+.userOverall h2 {
+  font-size: 30px;
+  font-weight: 800;
+  color: white;
+}
+.userOverall p {
+  margin-top: 10px;
+  font-size: 15px;
+  color: white;
+}
+.userOverall h3 {
+  color: white;
+  font-size: 30px;
+  font-weight: 400;
+}
+
+.graphIcon {
+  display: block;
+  margin-left: auto;
+  margin-right: 0px;
+  color: white;
+  font-size: 60px;
+}
+
+
+.customerInformation {
+  position: fixed;
+  top: 5px;left: 0px;
+  width: 100%;
+  height: 100vh;
+  background-color: white;
+  animation: rightToLeft 0.3s;
+  z-index: 999;
+}
+@keyframes rightToLeft {
+  from {
+    left: 100vw;
+  }
+  to {
+    left: 0;
+  }
+}
+
+/* .customerInformation button {
+  background: none;
+  font-size: 18px;
+  font-weight: 500;
+  display: block;
+  margin-right: auto;
+  margin-left: 10px;
+  color: #69D780;
+} */
+.wrapper-customerInformation {
+  padding: 20px;
+}
+.customerInformation h2 {
+  font-size: 30px;
+  text-align: left;
+}
+
+.grid-contact {
+  display: grid;
+  grid-template-columns: 30px auto;
+  gap: 10px;
+  font-size: 20px;
+  margin-top: 10px;
+}
+.grid-contact p {
+  color: gray;
+  text-align: left;
+}
+.phoneIcon, .mailIcon, .locationIcon {
+  color: white;
+  background-color: #69D780;
+  border-radius: 5px;
+  padding: 2px;
+  height: 30px;
+}
+
+.btn-newCustomer {
+  position: fixed;
+  right: 15px;
+  bottom: 15px;
+  width: 80px;
+  height: 80px;
+  font-size: 35px;
+  border-radius: 50%;
+  background-color: #69D780;
+  color: white;
+}
+
+.newCustomer {
+  position: fixed;
+  top: 5px;left: 0px;
+  width: 100%;
+  height: 100vh;
+  background-color: white;
+  animation: rightToLeft 0.3s;
+  z-index: 999;
+}
+.wrapper-newCustomer {
+  padding: 20px;
+}
+.newCustomer h2 {
+  font-size: 30px;
+  text-align: center;
+}
+.newCustomer p {
+  text-align: center;
+  margin-bottom: 30px;
+}
+.btnBack {
+  background: none;
+  font-size: 18px;
+  font-weight: 500;
+  display: block;
+  margin-right: auto;
+  margin-left: 10px;
+  color: #69D780;
+}
+
+.inputs {
+  display: block;
+  width: 90%;
+  height: 45px;
+  padding-left: 20px;
+  font-size: 18px;
+  font-weight: 400;
+  margin: 5px auto 5px auto;
+  border: 1px solid lightgray;
+  border-radius: 10px;
+  outline: none;
+}
+
+.btnSave {
+  display: block;
+  width: 80%;
+  height: 45px;
+  background-color: #69D780;
+  color: white;
+  font-size: 20px;
+  margin: 30px auto auto auto;
+  border-radius: 10px;
+  font-weight: 500;
+}
+
+
+.confirmation-newCustomer {
+  background-color: white;
+  position: fixed;
+  bottom: 30px;
+  width: 90%;
+  left: 50%;
+  transform: translate(-50%);
+  height: 250px;
+
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+  border-radius: 20px;
+  animation: bottomToTop 0.6s;
+}
+
+.confirmation-newCustomer i {
+  display: block;
+  margin-top: 20px;
+  font-size: 50px;
+  color: rgb(0, 122, 255);
+}
+.confirmation-newCustomer p {
+  font-size: 20px;
+  color: gray;
+  width: 75%;
+  margin: auto;
+  margin-top: 20px;
+}
+
+.confirmation-newCustomer button {
+  width: 200px;
+  height: 40px;
+  font-size: 15px;
+  margin-top: 30px;
+  color: white;
+  border-radius: 10px;
+  background-color: rgb(0, 122, 255);
+}
+
+@keyframes bottomToTop {
+  from {
+    bottom: -280px;
+  }
+  to {
+    bottom: 30px;
   }
 }
