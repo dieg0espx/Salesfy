@@ -83,7 +83,7 @@ function App() {
               lastName={user.lastName}
               phone={user.phone}
               email={user.email}
-              address={user.address}
+              address={user.workAddress}
               setShowCustomerInformation={()=>setShowCustomerInformation(true)}
               setCustomerID={(id)=>setCustomerID(id)}
             />

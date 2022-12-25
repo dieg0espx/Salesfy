@@ -42,9 +42,7 @@ function NewCustomer(props) {
         setWorkPlace("");
         setWorkAddress("");
         setShowConfirmation(false);
-    }
-
-
+    }    
    return (
     <div className='newCustomer' style={{display: props.showNewCustomer ? "block" : "none"}}>
         <button className="btnBack" onClick={()=>props.setShowNewCustomer()}> <i className="bi bi-chevron-left"></i> Back </button>

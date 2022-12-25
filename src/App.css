@@ -47,6 +47,9 @@ body {
   font-family: 'Montserrat', sans-serif;
 }
 
+button {
+  border: none;
+}
 .header {
   position: fixed;
   top: 0;
@@ -294,6 +297,12 @@ body {
   text-align: center;
   margin-bottom: 30px;
 }
+.navigationBar {
+  display:flex;
+  /* grid-template-columns: auto auto; */
+  align-items: center;
+  justify-content: center;
+}
 .btnBack {
   background: none;
   font-size: 18px;
@@ -301,6 +310,15 @@ body {
   display: block;
   margin-right: auto;
   margin-left: 10px;
+  color: #69D780;
+}
+.btnPlus {
+  background: none;
+  font-size: 30px;
+  font-weight: 500;
+  display: block;
+  margin-right: 25px;
+  margin-left: auto;
   color: #69D780;
 }
 
@@ -375,4 +393,65 @@ body {
   to {
     bottom: 30px;
   }
+}
+
+.newSale {
+  background-color: white;
+  width: 100vw;
+  height: 99vh;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  bottom: 0;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  animation: rightToLeft 0.5s;
+}
+
+.newSale .navigationBar {
+  display: grid;
+  grid-template-columns: 33.3% 33.3% 33.3%;
+  background-color: white;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  height: 50px;
+  
+}
+.newSale .navigationBar h2 {
+  text-align: center;
+  color: gray;
+  font-weight: bold;
+  font-size: 18px;
+}
+.btnSaveNavigation {
+  background: none;
+  font-size: 18px;
+  font-weight: 500;
+  display: block;
+  margin: auto;
+  color: #69D780;
+}
+#left {
+  margin-left: 10px;
+  margin-right: auto;
+}
+#right {
+  margin-right: 20px;
+  margin-left: auto;
+}
+.newSale .navigationBar .btnSaveSale {
+  background-color: transparent;
+  color: white;
+}
+@keyframes bottom2Top {
+  from {
+    bottom: -99vh;
+  }
+  to {
+    bottom: 0;
+  }
+}
+
+.formNewSale {
+  margin-top: 50px;
 }
